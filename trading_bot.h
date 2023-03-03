@@ -8,12 +8,15 @@
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
 
+
+#define SHA256_DIGEST_LENGTH 32
+
 using json = nlohmann::json;
 
-class BinanceAPI
+class TradingBot
 {
 public:
-    BinanceAPI(const std::string& apiKey, const std::string& secretKey);
+    TradingBot(const std::string& apiKey, const std::string& secretKey);
 
     json getTickerPrice(const std::string& symbol);
 
